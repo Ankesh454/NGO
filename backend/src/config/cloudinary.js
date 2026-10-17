@@ -1,14 +1,17 @@
 import { v2 as cloudinary } from "cloudinary";
 
-const requiredVariables = [
-  "CLOUDINARY_CLOUD_NAME",
-  "CLOUDINARY_API_KEY",
-  "CLOUDINARY_API_SECRET",
-];
+const cloudinaryConfig = {
+  cloud_name:
+    process.env.CLOUDINARY_CLOUD_NAME?.trim() || process.env.CLOUD_NAME?.trim(),
+  api_key:
+    process.env.CLOUDINARY_API_KEY?.trim() || process.env.CLOUD_API_KEY?.trim(),
+  api_secret:
+    process.env.CLOUDINARY_API_SECRET?.trim() || process.env.CLOUD_API_SECRET?.trim(),
+};
 
-const missingVariables = requiredVariables.filter(
-  (key) => !process.env[key]?.trim()
-);
+const missingVariables = Object.entries(cloudinaryConfig)
+  .filter(([, value]) => !value)
+  .map(([key]) => key);
 
 if (missingVariables.length > 0) {
   console.error(
@@ -17,9 +20,7 @@ if (missingVariables.length > 0) {
 }
 
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  ...cloudinaryConfig,
   secure: true,
 });
 
