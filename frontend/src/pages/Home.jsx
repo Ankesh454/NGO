@@ -20,9 +20,9 @@ const Home = () => {
       />
 
       <Hero />
-      <DonorFeed />
       <AboutPreview />
       <WorkPreview />
+      <DonorFeed />
       <ImpactCalculator />
       <TeamSection />
       <GalleryPreview />
