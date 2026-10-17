@@ -11,8 +11,8 @@ const GalleryPreview = () => {
     API
       .get("/gallery")
       .then((res) => {
-        if (isMounted && Array.isArray(res.data)) {
-          setItems(res.data);
+        if (isMounted && Array.isArray(res.data?.items)) {
+          setItems(res.data.items);
         }
       })
       .catch((err) => console.error("GalleryPreview error:", err));

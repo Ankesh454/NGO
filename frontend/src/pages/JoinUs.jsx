@@ -40,7 +40,9 @@ const JoinUs = () => {
       });
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong. Please try again.");
+      toast.error(
+        error.response?.data?.message || "Something went wrong. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -84,6 +86,8 @@ const JoinUs = () => {
                 type="text"
                 name="name"
                 required
+                minLength="2"
+                maxLength="100"
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full px-3 py-3 outline-none"
@@ -99,6 +103,9 @@ const JoinUs = () => {
                 type="tel"
                 name="phone"
                 required
+                minLength="7"
+                maxLength="20"
+                pattern="[+()0-9\\s-]+"
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full px-3 py-3 outline-none"
@@ -113,6 +120,8 @@ const JoinUs = () => {
               <input
                 type="email"
                 name="email"
+                required
+                maxLength="254"
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full px-3 py-3 outline-none"
@@ -125,6 +134,7 @@ const JoinUs = () => {
             <textarea
               name="message"
               rows="4"
+              maxLength="2000"
               value={formData.message}
               onChange={handleChange}
               className="w-full border rounded-lg px-4 py-3 outline-none"

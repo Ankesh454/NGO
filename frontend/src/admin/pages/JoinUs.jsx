@@ -17,7 +17,7 @@ export default function JoinUs() {
     try {
       setLoading(true);
       const res = await adminApi.get("/join-us");
-      const withStatus = (res.data || []).map((item) => ({
+      const withStatus = (res.data?.applications || []).map((item) => ({
         ...item,
         status: item.status || "New",
       }));

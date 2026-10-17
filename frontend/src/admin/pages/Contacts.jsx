@@ -19,7 +19,7 @@ export default function Contacts() {
       setLoading(true);
       const res = await adminApi.get("/contact");
       // Add default status if missing
-      const dataWithStatus = (res.data || []).map((item) => ({
+      const dataWithStatus = (res.data?.contacts || []).map((item) => ({
         ...item,
         status: item.status || "New",
       }));

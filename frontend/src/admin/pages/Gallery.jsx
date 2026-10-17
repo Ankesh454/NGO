@@ -24,7 +24,7 @@ export default function Gallery() {
     try {
       setFetching(true);
       const res = await adminApi.get("/gallery");
-      setGallery(res.data);
+      setGallery(Array.isArray(res.data?.items) ? res.data.items : []);
     } catch (err) {
       console.error(err);
       toast.error("Failed to load gallery");

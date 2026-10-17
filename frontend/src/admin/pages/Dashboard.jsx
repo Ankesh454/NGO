@@ -16,8 +16,8 @@ export default function Dashboard() {
     contacts: 0,
     joinUs: 0,
     gallery: 0,
-    donationsCount: 4,
-    totalFunds: 9000,
+    donationsCount: 0,
+    totalFunds: 0,
   });
 
   const fetchStats = async () => {
@@ -28,8 +28,8 @@ export default function Dashboard() {
         adminApi.get("/gallery"),
       ]);
 
-      let donCount = 4;
-      let donSum = 9000;
+      let donCount = 0;
+      let donSum = 0;
       try {
         const donRes = await adminApi.get("/donations");
         if (Array.isArray(donRes.data) && donRes.data.length > 0) {
@@ -41,9 +41,9 @@ export default function Dashboard() {
       }
 
       setStats({
-        contacts: contactsRes.status === "fulfilled" ? contactsRes.value.data.length : 0,
-        joinUs: joinRes.status === "fulfilled" ? joinRes.value.data.length : 0,
-        gallery: galleryRes.status === "fulfilled" ? galleryRes.value.data.length : 0,
+        contacts: contactsRes.status === "fulfilled" ? contactsRes.value.data?.count || 0 : 0,
+        joinUs: joinRes.status === "fulfilled" ? joinRes.value.data?.count || 0 : 0,
+        gallery: galleryRes.status === "fulfilled" ? galleryRes.value.data?.count || 0 : 0,
         donationsCount: donCount,
         totalFunds: donSum,
       });

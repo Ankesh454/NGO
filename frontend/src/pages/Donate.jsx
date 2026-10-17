@@ -84,8 +84,8 @@ const Donate = () => {
   const handleRazorpayPayment = async (e) => {
     e.preventDefault();
 
-    if (!finalAmount || finalAmount < 50) {
-      toast.error("Please enter a minimum donation amount of ₹50");
+    if (!Number.isInteger(finalAmount) || finalAmount < 50 || finalAmount > 500000) {
+      toast.error("Please enter a whole donation amount between ₹50 and ₹5,00,000");
       return;
     }
 
@@ -97,29 +97,29 @@ const Donate = () => {
     setLoading(true);
 
     try {
+      const orderResponse = await API.post("/donations/create-order", {
+        amount: finalAmount,
+        donorName: donor.isAnonymous ? "Anonymous Supporter" : donor.name,
+        email: donor.email,
+        cause: selectedCause,
+      });
+      const order = orderResponse.data;
+
+      if (!order.success || !order.orderId || !order.keyId) {
+        throw new Error("The donation order could not be created");
+      }
+
       const isLoaded = await loadRazorpayScript();
       if (!isLoaded) {
         toast.error("Razorpay SDK failed to load. Please check your internet connection.");
-        setLoading(false);
-        return;
-      }
-
-      // Check for custom key or default test sandbox key
-      const razorpayKey =
-        import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_placeholder";
-
-      // If placeholder is detected, notify user gently in test mode
-      if (razorpayKey === "rzp_test_placeholder") {
-        toast(
-          "Running in Demo/Sandbox mode. Add your VITE_RAZORPAY_KEY_ID in .env for live gateway.",
-          { icon: "ℹ️", duration: 5000 }
-        );
+        throw new Error("Razorpay SDK failed to load");
       }
 
       const options = {
-        key: razorpayKey,
-        amount: Math.round(finalAmount * 100), // amount in paise
-        currency: "INR",
+        key: order.keyId,
+        order_id: order.orderId,
+        amount: order.amount,
+        currency: order.currency,
         name: "Mannat Foundation",
         description: `Donation: ${selectedCause}`,
         image: "/favicon.png",
@@ -143,31 +143,37 @@ const Donate = () => {
           },
         },
         handler: async function (response) {
-          const successData = {
-            paymentId: response.razorpay_payment_id || `demo_pay_${Date.now()}`,
-            amount: finalAmount,
-            donorName: donor.isAnonymous ? "Anonymous" : donor.name,
-            cause: selectedCause,
-            email: donor.email,
-            date: new Date().toLocaleDateString("en-IN", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-            }),
-          };
-
-          // Record donation to backend if endpoint is ready
           try {
-            await API.post("/donations", successData);
-          } catch {
-            // Non-blocking: donation succeeded on payment gateway
-          }
+            const verification = await API.post(
+              "/donations/verify-payment",
+              response
+            );
 
-          setPaymentSuccess(successData);
-          setLoading(false);
-          toast.success("Thank you for your generous contribution!");
+            if (!verification.data?.success || !verification.data?.data) {
+              throw new Error("Payment verification failed");
+            }
+
+            const verifiedDonation = verification.data.data;
+            setPaymentSuccess({
+              ...verifiedDonation,
+              date: new Date(verifiedDonation.date).toLocaleString("en-IN", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+            });
+            toast.success("Thank you for your generous contribution!");
+          } catch (error) {
+            console.error("Payment verification error:", error);
+            toast.error(
+              error.response?.data?.message ||
+                "Your payment needs verification. Please contact support with your payment ID."
+            );
+          } finally {
+            setLoading(false);
+          }
         },
       };
 
@@ -182,7 +188,9 @@ const Donate = () => {
       razorpayInstance.open();
     } catch (err) {
       console.error("Razorpay checkout error:", err);
-      toast.error("Failed to initiate payment. Please try again.");
+      toast.error(
+        err.response?.data?.message || "Failed to initiate payment. Please try again."
+      );
       setLoading(false);
     }
   };

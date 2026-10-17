@@ -42,7 +42,9 @@ const Contact = () => {
       });
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong. Please try again.");
+      toast.error(
+        error.response?.data?.message || "Something went wrong. Please try again."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -116,6 +118,8 @@ const Contact = () => {
               type="text"
               name="name"
               required
+              minLength="2"
+              maxLength="100"
               value={formData.name}
               onChange={handleChange}
               placeholder="Your Name"
@@ -126,6 +130,7 @@ const Contact = () => {
               type="email"
               name="email"
               required
+              maxLength="254"
               value={formData.email}
               onChange={handleChange}
               placeholder="Email Address"
@@ -136,6 +141,8 @@ const Contact = () => {
               name="message"
               rows="4"
               required
+              minLength="10"
+              maxLength="5000"
               value={formData.message}
               onChange={handleChange}
               placeholder="Write your message"

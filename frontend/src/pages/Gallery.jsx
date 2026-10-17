@@ -19,7 +19,7 @@ const Gallery = () => {
   const fetchGallery = async () => {
     try {
       const res = await API.get("/gallery");
-      setGallery(res.data);
+      setGallery(Array.isArray(res.data?.items) ? res.data.items : []);
     } catch (err) {
       console.error("Failed to load gallery", err);
     } finally {
