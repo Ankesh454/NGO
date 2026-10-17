@@ -14,9 +14,9 @@ const Home = () => {
     <>
       <SEO
         title="Helping Communities Grow"
-        description="Mannat Foundation is a non-profit organization working in education, welfare, and social awareness to empower communities."
+        description="Samarpan Foundation is a non-profit organization working in education, welfare, and social awareness to empower communities."
         keywords="NGO, charity, education, welfare, social work, donation, razorpay"
-        url="https://mannatfoundation.org/"
+        url="https://samarpanfoundation.org/"
       />
 
       <Hero />

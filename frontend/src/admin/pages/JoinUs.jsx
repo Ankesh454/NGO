@@ -71,7 +71,7 @@ export default function JoinUs() {
             </span>
           </h2>
           <p className="text-gray-500 text-xs mt-1">
-            People who applied to join and support Mannat Foundation
+            People who applied to join and support Samarpan Foundation
           </p>
         </div>
 

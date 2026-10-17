@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const ALLOWED_CAUSES = [
   "General Fund (Where Most Needed)",
+  "Education Support & Samarpan Library",
   "Education Support & Mannat Library",
   "Community Welfare & Food Drives",
   "Senior Citizen Care & Free Therapy",

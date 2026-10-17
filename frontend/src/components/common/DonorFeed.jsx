@@ -30,7 +30,7 @@ const FALLBACK_DONATIONS = [
   {
     donorName: "Vikram Malhotra",
     amount: 1500,
-    cause: "Mannat Library",
+    cause: "Samarpan Library",
     timeAgo: "3 hours ago",
   },
   {

@@ -19,7 +19,7 @@ const SAMPLE_DONATIONS = [
     email: "rahul.sharma@example.com",
     phone: "9876543210",
     amount: 1000,
-    cause: "Education Support & Mannat Library",
+    cause: "Education Support & Samarpan Library",
     paymentId: "pay_Op9xL2q1Z876",
     status: "Verified",
     createdAt: new Date(Date.now() - 3600000 * 2).toISOString(),
@@ -110,7 +110,7 @@ export default function AdminDonations() {
   }, [donations]);
 
   const handleExport = () => {
-    exportToCSV(filteredDonations, `mannat_donations_${Date.now()}.csv`);
+    exportToCSV(filteredDonations, `samarpan_donations_${Date.now()}.csv`);
   };
 
   return (

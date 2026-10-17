@@ -18,7 +18,7 @@ export default function Sidebar() {
     <aside className="w-64 bg-gray-900 text-white p-5 flex flex-col justify-between">
       <div>
         <div className="mb-8 pb-4 border-b border-gray-800">
-          <h2 className="text-xl font-extrabold text-white">Mannat Admin</h2>
+          <h2 className="text-xl font-extrabold text-white">Samarpan Admin</h2>
           <p className="text-xs text-green-400 mt-0.5">Management Portal</p>
         </div>
 

@@ -8,7 +8,7 @@ const testimonials = [
     name: "Afsana Khanam",
     role: "Volunteer",
     message:
-      "Working with Mannat Foundation has been life-changing. The team genuinely cares about people and impact.",
+      "Working with Samarpan Foundation has been life-changing. The team genuinely cares about people and impact.",
     image: VolsImg,
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     name: "Neha Sharma",
     role: "Community Member",
     message:
-      "Because of Mannat Foundation, our village now has access to education and healthcare support.",
+      "Because of Samarpan Foundation, our village now has access to education and healthcare support.",
     image: commImg,
   },
 ];

@@ -13,7 +13,7 @@ const Hero = () => {
     <section className="relative isolate min-h-[720px] overflow-hidden bg-emerald-950 pt-24 sm:pt-28">
       <img
         src="/hero-bg.webp"
-        alt="Children supported by Mannat Foundation"
+        alt="Children supported by Samarpan Foundation"
         className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
         loading="eager"
       />

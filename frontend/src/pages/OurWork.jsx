@@ -12,7 +12,7 @@ const workItems = [
     title: "Education Support",
     image: educationImg,
     description:
-      "We empower children and youth by providing access to quality education, learning resources, mentorship, and awareness programs. Our Mannat Library offers free access to books and learning materials, helping students grow academically and build confidence for a better future.",
+      "We empower children and youth by providing access to quality education, learning resources, mentorship, and awareness programs. Our Samarpan Library offers free access to books and learning materials, helping students grow academically and build confidence for a better future.",
   },
   {
     title: "Community Welfare",
@@ -39,8 +39,8 @@ export default function OurWork() {
     <section className="max-w-6xl mx-auto px-6 py-16">
       <SEO
         title="Our Work"
-        description="Discover Mannat Foundation initiatives in Education Support, Community Welfare, Senior Citizen Care, and Animal Welfare."
-        url="https://mannatfoundation.org/our-work"
+        description="Discover Samarpan Foundation initiatives in Education Support, Community Welfare, Senior Citizen Care, and Animal Welfare."
+        url="https://samarpanfoundation.org/our-work"
       />
        <motion.div
           initial={{ opacity: 0, y: 30 }}

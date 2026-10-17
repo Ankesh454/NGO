@@ -45,10 +45,10 @@ const Navbar = () => {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="Mannat Foundation home">
+        <Link to="/" className="flex items-center gap-2.5" aria-label="Samarpan Foundation home">
           <img src={logo} alt="" className="h-10 w-10 object-contain" />
           <span className={`text-base font-extrabold tracking-tight sm:text-lg ${useLightText ? "text-white" : "text-emerald-950"}`}>
-            Mannat Foundation
+            Samarpan Foundation
           </span>
         </Link>
 

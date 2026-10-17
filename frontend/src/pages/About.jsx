@@ -11,8 +11,8 @@ const About = () => {
     <section className="bg-white min-h-screen">
       <SEO
         title="About Us"
-        description="Learn about Mannat Foundation, our mission, vision, and grassroots initiatives for education and welfare."
-        url="https://mannatfoundation.org/about"
+        description="Learn about Samarpan Foundation, our mission, vision, and grassroots initiatives for education and welfare."
+        url="https://samarpanfoundation.org/about"
       />
       <div className="max-w-6xl mx-auto px-6 py-20">
 
@@ -24,10 +24,10 @@ const About = () => {
           className="text-center"
         >
           <h1 className="text-4xl font-bold text-gray-900">
-            About <span className="text-green-700">Mannat Foundation</span>
+            About <span className="text-green-700">Samarpan Foundation</span>
           </h1>
           <p className="mt-4 text-gray-600 text-lg max-w-3xl mx-auto">
-            Mannat Foundation is a non-profit organization committed to improving
+            Samarpan Foundation is a non-profit organization committed to improving
             lives and empowering communities through education, awareness, and
             social welfare initiatives.
           </p>

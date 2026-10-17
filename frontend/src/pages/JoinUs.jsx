@@ -52,8 +52,8 @@ const JoinUs = () => {
     <section className="bg-green-50 min-h-screen">
       <SEO
         title="Join Us"
-        description="Volunteer and become a part of Mannat Foundation's mission to create positive change."
-        url="https://mannatfoundation.org/join-us"
+        description="Volunteer and become a part of Samarpan Foundation's mission to create positive change."
+        url="https://samarpanfoundation.org/join-us"
       />
       <div className="max-w-3xl mx-auto px-6 py-20">
 

@@ -54,8 +54,8 @@ const Contact = () => {
     <section className="bg-gray-50 min-h-screen">
       <SEO
         title="Contact Us"
-        description="Get in touch with Mannat Foundation for donations, volunteering, or partnership opportunities."
-        url="https://mannatfoundation.org/contact"
+        description="Get in touch with Samarpan Foundation for donations, volunteering, or partnership opportunities."
+        url="https://samarpanfoundation.org/contact"
       />
       <div className="max-w-6xl mx-auto px-6 py-20">
 
@@ -101,7 +101,7 @@ const Contact = () => {
             <div className="flex gap-4 items-center">
               <FaEnvelope className="text-green-700 text-xl" />
               <p className="text-gray-700">
-                <strong>Email:</strong> contact@mannatfoundation.org
+                <strong>Email:</strong> contact@samarpanfoundation.org
               </p>
             </div>
           </motion.div>

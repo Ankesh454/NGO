@@ -4,6 +4,7 @@ import Donation from "../models/Donation.model.js";
 
 const ALLOWED_CAUSES = [
   "General Fund (Where Most Needed)",
+  "Education Support & Samarpan Library",
   "Education Support & Mannat Library",
   "Community Welfare & Food Drives",
   "Senior Citizen Care & Free Therapy",
@@ -157,7 +158,7 @@ export const verifyRazorpayPayment = async (req, res) => {
       typeof signature !== "string" ||
       !orderId.trim() ||
       !paymentId.trim() ||
-      !/^[a-fA-F0-9]{128}$/.test(signature)
+      !/^[a-fA-F0-9]{64}$/.test(signature)
     ) {
       return res.status(400).json({
         success: false,
@@ -227,13 +228,17 @@ export const verifyRazorpayPayment = async (req, res) => {
       payment.order_id !== orderId ||
       payment.amount !== donation.amount * 100 ||
       payment.currency !== "INR" ||
-      payment.status !== "captured"
+      (payment.status !== "captured" && payment.status !== "authorized")
     ) {
       return res.status(400).json({
         success: false,
         message:
           "Payment is not captured yet. Please check the payment status before retrying.",
       });
+    }
+
+    if (payment.status === "authorized") {
+      await razorpay.payments.capture(paymentId, donation.amount * 100, "INR");
     }
 
     // Conditional update prevents overwriting a donation already verified

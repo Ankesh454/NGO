@@ -41,7 +41,7 @@ const PRESET_TIERS = [
 
 const CAUSES = [
   "General Fund (Where Most Needed)",
-  "Education Support & Mannat Library",
+  "Education Support & Samarpan Library",
   "Community Welfare & Food Drives",
   "Senior Citizen Care & Free Therapy",
   "Animal Protection & Rescue Aid",
@@ -111,7 +111,9 @@ const Donate = () => {
 
       const isLoaded = await loadRazorpayScript();
       if (!isLoaded) {
-        toast.error("Razorpay SDK failed to load. Please check your internet connection.");
+        toast.error(
+          "Razorpay SDK failed to load. Please disable ad-blockers / Brave Shields or check your connection."
+        );
         throw new Error("Razorpay SDK failed to load");
       }
 
@@ -120,9 +122,12 @@ const Donate = () => {
         order_id: order.orderId,
         amount: order.amount,
         currency: order.currency,
-        name: "Mannat Foundation",
+        name: "Samarpan Foundation",
         description: `Donation: ${selectedCause}`,
-        image: "/favicon.png",
+        image:
+          typeof window !== "undefined"
+            ? `${window.location.origin}/favicon.png`
+            : undefined,
         prefill: {
           name: donor.isAnonymous ? "Anonymous Donor" : donor.name,
           email: donor.email,
@@ -189,7 +194,9 @@ const Donate = () => {
     } catch (err) {
       console.error("Razorpay checkout error:", err);
       toast.error(
-        err.response?.data?.message || "Failed to initiate payment. Please try again."
+        err.response?.data?.message ||
+          err.message ||
+          "Failed to initiate payment. Please try again."
       );
       setLoading(false);
     }
@@ -199,8 +206,8 @@ const Donate = () => {
     <section className="bg-gradient-to-b from-green-50/50 to-white min-h-screen py-16 md:py-24">
       <SEO
         title="Donate & Support"
-        description="Make a secure donation via Razorpay to Mannat Foundation. Support education, healthcare, senior care, and community welfare."
-        url="https://mannatfoundation.org/donate"
+        description="Make a secure donation via Razorpay to Samarpan Foundation. Support education, healthcare, senior care, and community welfare."
+        url="https://samarpanfoundation.org/donate"
       />
 
       <div className="max-w-6xl mx-auto px-4 md:px-8">
@@ -521,7 +528,7 @@ const Donate = () => {
                   >
                     <div className="flex justify-between items-center py-1">
                       <span className="text-gray-500">Account Name:</span>
-                      <span className="font-medium">Mannat Foundation</span>
+                      <span className="font-medium">Samarpan Foundation</span>
                     </div>
                     <div className="flex justify-between items-center py-1">
                       <span className="text-gray-500">Account Number:</span>

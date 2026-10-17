@@ -31,9 +31,9 @@ const Gallery = () => {
     <section className="bg-white min-h-screen">
       <SEO
         title="Gallery"
-        description="Explore photos from Mannat Foundation's community programs, education drives, and welfare initiatives."
+        description="Explore photos from Samarpan Foundation's community programs, education drives, and welfare initiatives."
         image="/gallery-og.jpg"
-        url="https://mannatfoundation.org/gallery"
+        url="https://samarpanfoundation.org/gallery"
       />
       <div className="max-w-7xl mx-auto px-6 py-20">
 

@@ -59,7 +59,7 @@ export default function Dashboard() {
   return (
     <>
       <Helmet>
-        <title>Admin Dashboard | Mannat Foundation</title>
+        <title>Admin Dashboard | Samarpan Foundation</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
@@ -70,7 +70,7 @@ export default function Dashboard() {
               Admin Overview
             </h2>
             <p className="text-gray-500 text-sm mt-1">
-              Welcome back to Mannat Foundation Operations & Donor Management
+              Welcome back to Samarpan Foundation Operations & Donor Management
             </p>
           </div>
 

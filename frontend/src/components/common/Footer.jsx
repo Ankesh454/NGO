@@ -10,14 +10,14 @@ const Footer = () => {
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12">
           
-          {/* 1️⃣ Mannat Foundation Info */}
+          {/* 1️⃣ Samarpan Foundation Info */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">
-              Mannat Foundation
+              Samarpan Foundation
             </h3>
 
             <p className="text-sm leading-relaxed mb-4">
-              Mannat Foundation is a non-profit organization working to support
+              Samarpan Foundation is a non-profit organization working to support
               communities through education, welfare, and social awareness.
             </p>
 
@@ -101,10 +101,10 @@ const Footer = () => {
 
             <p className="text-sm mb-4">
               <a
-                  href="mailto:contact@mannatfoundation.org"
+                  href="mailto:contact@samarpanfoundation.org"
                   className="hover:text-green-400 transition"
                 >
-                  📧 contact@mannatfoundation.org
+                  📧 contact@samarpanfoundation.org
                 </a>    
             </p>
             <p className="text-sm mb-6">
@@ -143,7 +143,7 @@ const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-gray-700 py-6 text-center text-sm text-gray-400">
-          © 2026 Mannat Foundation. All rights reserved.
+          © 2026 Samarpan Foundation. All rights reserved.
         </div>
       </div>
     </footer>

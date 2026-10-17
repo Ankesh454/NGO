@@ -5,9 +5,9 @@ const SEO = ({
   description,
   keywords = "",
   image = "/og-image.jpg",
-  url = "https://mannatfoundation.org",
+  url = "https://samarpanfoundation.org",
 }) => {
-  const fullTitle = `${title} | Mannat Foundation`;
+  const fullTitle = `${title} | Samarpan Foundation`;
 
   return (
     <Helmet>
