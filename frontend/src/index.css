@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* ── Custom xs breakpoint for Tailwind v4 ── */
+@theme {
+  --breakpoint-xs: 480px;
+}
+
+/* Prevent horizontal overflow on mobile */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent images from overflowing their containers */
+img, video {
+  max-width: 100%;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

@@ -10,37 +10,37 @@ const trustPoints = [
 
 const Hero = () => {
   return (
-    <section className="relative isolate min-h-[720px] overflow-hidden bg-emerald-950 pt-24 sm:pt-28">
+    <section className="relative isolate min-h-[580px] sm:min-h-[720px] overflow-hidden bg-emerald-950 pt-24 sm:pt-28">
       <img
         src="/hero-bg.webp"
         alt="Children supported by Samarpan Foundation"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-center sm:object-[65%_center]"
         loading="eager"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-emerald-950 via-emerald-950/85 to-emerald-950/30" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-emerald-950/85 via-transparent to-emerald-950/20" />
 
-      <div className="mx-auto flex min-h-[calc(720px-6rem)] max-w-7xl items-center px-6 py-16 sm:px-10 lg:px-16">
+      <div className="mx-auto flex min-h-[calc(580px-6rem)] sm:min-h-[calc(720px-6rem)] max-w-7xl items-center px-4 sm:px-6 py-12 sm:py-16 md:px-10 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="max-w-3xl"
+          className="w-full max-w-3xl"
         >
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/10 px-4 py-2 text-sm font-semibold tracking-wide text-emerald-100 backdrop-blur-sm">
             <FaHeart className="text-emerald-300" /> Community-led non-profit
           </p>
 
-          <h1 className="max-w-2xl text-5xl font-black leading-[0.98] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-black leading-[1.05] tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl">
             Education. Care. <span className="text-emerald-300">Dignity.</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-emerald-50/90 sm:text-xl">
+          <p className="mt-6 max-w-xl text-base leading-7 text-emerald-50/90 sm:text-xl sm:leading-8">
             Helping communities build stronger futures through practical support,
             trusted care, and local action.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               to="/donate"
               className="group inline-flex items-center justify-center gap-3 rounded-xl bg-emerald-400 px-6 py-4 text-base font-bold text-emerald-950 shadow-xl shadow-emerald-950/30 transition hover:bg-emerald-300"
@@ -56,7 +56,7 @@ const Hero = () => {
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-3 border-t border-white/15 pt-6 sm:grid-cols-3 sm:gap-6">
+          <div className="mt-10 grid grid-cols-1 gap-2 border-t border-white/15 pt-5 sm:grid-cols-3 sm:gap-6">
             {trustPoints.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2.5 text-sm font-medium text-emerald-50/85">
                 <Icon className="shrink-0 text-emerald-300" />

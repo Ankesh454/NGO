@@ -63,39 +63,39 @@ export default function Dashboard() {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="dashboard max-w-7xl mx-auto p-4 sm:p-6">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div className="dashboard max-w-7xl mx-auto space-y-6 sm:space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
               Admin Overview
             </h2>
-            <p className="text-gray-500 text-sm mt-1">
+            <p className="text-gray-500 text-xs sm:text-sm mt-0.5 sm:mt-1">
               Welcome back to Samarpan Foundation Operations & Donor Management
             </p>
           </div>
 
           <Link
             to="/admin/donations"
-            className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md transition self-start md:self-auto"
+            className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold shadow-md transition self-start sm:self-auto flex-shrink-0"
           >
             <span>💳 View Donations</span>
           </Link>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Total Raised */}
           <div className="stat-card card-donations">
             <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none" />
-            <div className="flex items-center justify-between relative z-10">
-              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider">
+            <div className="flex items-center justify-between relative z-10 gap-3">
+              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider truncate">
                 Total Raised
               </h3>
-              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner">
+              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner flex-shrink-0">
                 <FiHeart />
               </div>
             </div>
-            <p className="text-3xl sm:text-4xl font-black text-white mt-3 tracking-tight relative z-10 drop-shadow-sm">
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mt-2 sm:mt-3 tracking-tight relative z-10 drop-shadow-sm truncate">
               ₹{stats.totalFunds.toLocaleString("en-IN")}
             </p>
             <div className="mt-4 flex items-center justify-between relative z-10 pt-2 border-t border-white/15">
@@ -116,15 +116,15 @@ export default function Dashboard() {
           {/* Contact Queries */}
           <div className="stat-card card-contacts">
             <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none" />
-            <div className="flex items-center justify-between relative z-10">
-              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider">
+            <div className="flex items-center justify-between relative z-10 gap-3">
+              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider truncate">
                 Contact Queries
               </h3>
-              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner">
+              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner flex-shrink-0">
                 <FiMessageSquare />
               </div>
             </div>
-            <p className="text-3xl sm:text-4xl font-black text-white mt-3 tracking-tight relative z-10 drop-shadow-sm">
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mt-2 sm:mt-3 tracking-tight relative z-10 drop-shadow-sm truncate">
               {stats.contacts}
             </p>
             <div className="mt-4 flex items-center justify-between relative z-10 pt-2 border-t border-white/15">
@@ -144,15 +144,15 @@ export default function Dashboard() {
           {/* Join Requests */}
           <div className="stat-card card-join">
             <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none" />
-            <div className="flex items-center justify-between relative z-10">
-              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider">
+            <div className="flex items-center justify-between relative z-10 gap-3">
+              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider truncate">
                 Join Requests
               </h3>
-              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner">
+              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner flex-shrink-0">
                 <FiUsers />
               </div>
             </div>
-            <p className="text-3xl sm:text-4xl font-black text-white mt-3 tracking-tight relative z-10 drop-shadow-sm">
+            <p className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mt-2 sm:mt-3 tracking-tight relative z-10 drop-shadow-sm truncate">
               {stats.joinUs}
             </p>
             <div className="mt-4 flex items-center justify-between relative z-10 pt-2 border-t border-white/15">
@@ -172,11 +172,11 @@ export default function Dashboard() {
           {/* Gallery Media */}
           <div className="stat-card card-gallery">
             <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none" />
-            <div className="flex items-center justify-between relative z-10">
-              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider">
+            <div className="flex items-center justify-between relative z-10 gap-3">
+              <h3 className="text-xs font-bold text-white/90 uppercase tracking-wider truncate">
                 Gallery Media
               </h3>
-              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner">
+              <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/20 backdrop-blur-md flex items-center justify-center text-white text-lg shadow-inner flex-shrink-0">
                 <FiImage />
               </div>
             </div>

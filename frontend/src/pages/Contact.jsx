@@ -57,7 +57,7 @@ const Contact = () => {
         description="Get in touch with Samarpan Foundation for donations, volunteering, or partnership opportunities."
         url="https://samarpanfoundation.org/contact"
       />
-      <div className="max-w-6xl mx-auto px-6 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
 
         {/* Header */}
         <motion.div

@@ -120,24 +120,24 @@ export default function Gallery() {
   };
 
   return (
-    <div className="gallery-page max-w-7xl mx-auto p-4 sm:p-6">
+    <div className="gallery-page max-w-7xl mx-auto space-y-6 sm:space-y-8">
       <Toaster position="top-right" />
 
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
             Gallery Management
           </h2>
-          <p className="text-gray-500 text-sm mt-1">
+          <p className="text-gray-500 text-xs sm:text-sm mt-0.5 sm:mt-1">
             Upload pictures and videos with automatic Cloudinary compression & WebP/AVIF delivery
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
-            <FiCheckCircle className="text-emerald-600" />
-            Cloudinary Auto-Compress Active
+            <FiCheckCircle className="text-emerald-600 flex-shrink-0" />
+            <span>Cloudinary Auto-Compress Active</span>
           </span>
           <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-semibold">
             {gallery.length} Media Items
@@ -146,7 +146,7 @@ export default function Gallery() {
       </div>
 
       {/* Upload Card */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-10">
+      <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-xs border border-gray-100">
         <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center gap-2">
           <FiUploadCloud className="text-emerald-600 text-lg" />
           <span>Upload Media (Auto-Compressed)</span>

@@ -36,7 +36,7 @@ const workItems = [
 
 export default function OurWork() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
       <SEO
         title="Our Work"
         description="Discover Samarpan Foundation initiatives in Education Support, Community Welfare, Senior Citizen Care, and Animal Welfare."
@@ -65,7 +65,7 @@ export default function OurWork() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className={`grid md:grid-cols-2  items-center p-6 rounded-2xl ${
+            className={`grid md:grid-cols-2 gap-6 items-center p-4 sm:p-6 rounded-2xl ${
               index % 2 === 1 ? "bg-green-50" : "bg-green-50"
             }`}
           >

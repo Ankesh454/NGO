@@ -62,54 +62,54 @@ export default function Contacts() {
   };
 
   return (
-    <div className="contacts-page max-w-7xl mx-auto p-4">
+    <div className="contacts-page max-w-7xl mx-auto space-y-6">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="page-title text-2xl font-bold text-gray-900 flex items-center gap-2">
+          <h2 className="page-title text-xl sm:text-2xl font-bold text-gray-900 flex items-center gap-2.5">
             <span>📩 Contact Messages</span>
             <span className="text-xs bg-green-100 text-green-800 px-2.5 py-0.5 rounded-full font-bold">
               {filteredContacts.length}
             </span>
           </h2>
-          <p className="text-gray-500 text-xs mt-1">
+          <p className="text-gray-500 text-xs sm:text-sm mt-0.5 sm:mt-1">
             Inquiries received from website contact form
           </p>
         </div>
 
         <button
           onClick={handleExport}
-          className="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow transition self-start sm:self-auto"
+          className="inline-flex items-center gap-2 bg-green-700 hover:bg-green-800 active:scale-[0.98] text-white px-3.5 py-2 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-xs hover:shadow transition self-start sm:self-auto flex-shrink-0"
         >
-          <FaFileCsv />
+          <FaFileCsv className="text-sm flex-shrink-0" />
           <span>Export CSV</span>
         </button>
       </div>
 
       {/* Search & Filter Bar */}
-      <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 mb-6 flex flex-col md:flex-row gap-4 items-center justify-between">
-        <div className="relative w-full md:w-80">
-          <FaSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs" />
+      <div className="bg-white p-3.5 sm:p-4 rounded-xl shadow-xs border border-gray-100 flex flex-col md:flex-row gap-3 sm:gap-4 items-stretch md:items-center justify-between">
+        <div className="relative w-full md:w-80 min-w-0">
+          <FaSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none" />
           <input
             type="text"
             placeholder="Search name, email, message..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-white transition"
           />
         </div>
 
         {/* Status Pills */}
-        <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-          <span className="text-xs font-semibold text-gray-400 mr-1">Status:</span>
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full md:w-auto">
+          <span className="text-xs font-semibold text-gray-400 mr-1 flex-shrink-0">Status:</span>
           {STATUS_OPTIONS.map((status) => (
             <button
               key={status}
               type="button"
               onClick={() => setStatusFilter(status)}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold transition ${
+              className={`px-2.5 sm:px-3 py-1 rounded-lg text-xs font-semibold transition ${
                 statusFilter === status
-                  ? "bg-green-700 text-white shadow-sm"
+                  ? "bg-green-700 text-white shadow-xs"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >

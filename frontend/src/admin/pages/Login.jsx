@@ -40,7 +40,7 @@ export default function Login() {
     <div className="login-container">
       <div className="login-card">
         <h2>Samarpan Admin Login</h2>
-        <p className="subtitle">Welcome back 👋</p>
+        <p className="subtitle">Welcome back</p>
 
         {errorMsg && (
           <div className="bg-red-50 text-red-600 text-xs p-3 rounded-lg border border-red-200 mb-4 text-center">
@@ -71,7 +71,7 @@ export default function Login() {
               className="toggle-password"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? "🙈" : "👁️"}
+              {showPassword ? "🙈" : "⏿"}
             </span>
           </div>
 

@@ -5,7 +5,7 @@ import { FaHandsHelping } from "react-icons/fa";
 const AboutPreview = () => {
   return (
     <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid md:grid-cols-2 gap-8 sm:gap-10 items-center">
 
         {/* Left Image */}
         <motion.div

@@ -35,17 +35,17 @@ const WorkPreview = () => {
     <>
 
     
-      <section className="bg-[#f6faf7] py-20">
+      <section className="bg-[#f6faf7] py-14 sm:py-20">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl"
+          className="text-center text-2xl sm:text-3xl font-extrabold tracking-tight text-emerald-950 sm:text-4xl px-4"
         >
           Support that meets real needs
         </motion.h2>
 
-        <p className="mx-auto mt-4 mb-11 max-w-2xl text-center text-base leading-7 text-slate-600">
+        <p className="mx-auto mt-4 mb-11 max-w-2xl text-center text-base leading-7 text-slate-600 px-4">
           We focus on practical programmes that help people, strengthen communities,
           and create care that lasts.
         </p>

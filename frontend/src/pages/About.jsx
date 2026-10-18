@@ -14,7 +14,7 @@ const About = () => {
         description="Learn about Samarpan Foundation, our mission, vision, and grassroots initiatives for education and welfare."
         url="https://samarpanfoundation.org/about"
       />
-      <div className="max-w-6xl mx-auto px-6 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
 
         {/* Header */}
         <motion.div

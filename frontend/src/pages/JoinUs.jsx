@@ -55,7 +55,7 @@ const JoinUs = () => {
         description="Volunteer and become a part of Samarpan Foundation's mission to create positive change."
         url="https://samarpanfoundation.org/join-us"
       />
-      <div className="max-w-3xl mx-auto px-6 py-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-20">
 
         {/* Header */}
         <motion.div

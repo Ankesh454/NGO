@@ -32,7 +32,7 @@ const ImpactStats = () => {
     <section ref={ref} className="py-16 bg-white">
       <h2 className="text-3xl font-bold text-center mb-10">Our Impact</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto px-4 sm:px-6">
         {stats.map((item, i) => (
           <motion.div
             key={i}

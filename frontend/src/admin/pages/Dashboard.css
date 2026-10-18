@@ -1,14 +1,20 @@
 .dashboard {
-  padding: 24px;
+  padding: 0;
 }
 
 .stat-card {
   position: relative;
-  padding: 24px;
+  padding: 18px;
   border-radius: 18px;
   color: #ffffff;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .stat-card {
+    padding: 24px;
+  }
 }
 
 .stat-card:hover {
