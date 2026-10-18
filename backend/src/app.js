@@ -22,14 +22,9 @@ app.use(
 );
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:5174",
-  "http://localhost:3000",
   "https://samarpan-ngo.vercel.app",
-  ...(process.env.FRONTEND_URL
-    ? process.env.FRONTEND_URL.split(",").map((url) => url.trim())
-    : []),
-].filter(Boolean);
+  ...(process.env.FRONTEND_URL ? process.env.FRONTEND_URL.split(",") : [])
+];
 
 const isAllowedOrigin = (origin) => {
   if (!origin) return true;
@@ -45,7 +40,7 @@ const isAllowedOrigin = (origin) => {
   }
 
   // Allow all Vercel deployments (production + preview domains)
-  if (/^https:\/\/([a-zA-Z0-9_-]+\.)?vercel\.app$/.test(cleanOrigin)) {
+  if (/^https:\/\/([a-zA-Z0-9_-]+\.)*vercel\.app$/.test(cleanOrigin)) {
     return true;
   }
 
