@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppButton = () => {
-  const whatsappNumber = "919999999999"; // replace with NGO WhatsApp number
+  const whatsappNumber = "919608332106"; // replace with NGO WhatsApp number
   const message = "Hello, I would like to know more about Samarpan Foundation.";
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(

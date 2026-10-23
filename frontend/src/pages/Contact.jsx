@@ -94,7 +94,7 @@ const Contact = () => {
             <div className="flex gap-4 items-center">
               <FaPhoneAlt className="text-green-700 text-xl" />
               <p className="text-gray-700">
-                <strong>Phone:</strong> +91 9XXXXXXXXX
+                <strong>Phone:</strong> +91 9608332106
               </p>
             </div>
 
@@ -152,11 +152,10 @@ const Contact = () => {
             <button
               type="submit"
               disabled={submitting}
-              className={`w-full py-3 rounded-lg font-semibold transition ${
-                submitting
+              className={`w-full py-3 rounded-lg font-semibold transition ${submitting
                   ? "bg-gray-400 cursor-not-allowed text-white"
                   : "bg-green-700 text-white hover:bg-green-800"
-              }`}
+                }`}
             >
               {submitting ? "Sending..." : "Send Message"}
             </button>
